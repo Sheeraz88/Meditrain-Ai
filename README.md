@@ -57,7 +57,6 @@ To run MediTrain locally, ensure you have the following:
 ## Key Libraries
 
 * **Flask** : For building the user interface.
-* **Groq** : AI model powering the chatbot.
 * **Python-dotenv** : For managing environment variables.
 
 ## Important Notes
