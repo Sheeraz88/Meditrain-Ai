@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('user_input').value;
+            if (!userInput.trim()) {
+                alert('Please enter a symptom!');
+                return;
+            }
+            try {
+                const response = await fetch('/get_response', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_input }),
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to fetch response from the server.');
+                }
+                const data = await response.json();
+                document.getElementById('chat').innerHTML += `<p><b>You:</b> ${userInput}</p>`;
+                document.getElementById('chat').innerHTML += `<p><b>Bot:</b> ${data.response}</p>`;
+                document.getElementById('chat').scrollTop = document.getElementById('chat').scrollHeight;
+            } catch (error) {
+                document.getElementById('chat').innerHTML += `<p style="color:red;"><b>Error:</b> ${error.message}</p>`;
+            } finally {
+                document.getElementById('user_input').value = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style="color: #d32f2f; text-align: center; margin-bottom: 10px;">Meditrain Chatbot</h1>
+    <div id="chat" style="border: 2px solid #000; background-color: #f9f9f9; color: #333; padding: 10px; height: 300px; overflow-y: scroll; margin-bottom: 10px; border-radius: 10px;"></div>
+    <input style="margin-right: 10px; padding: 5px; border: 1px solid #000; border-radius: 5px;" type="text" id="user_input" placeholder="Describe your symptoms here..." />
+    <button style="background-color: #d32f2f; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;" onclick="sendMessage()">Send</button>
+</body>
+</html>
