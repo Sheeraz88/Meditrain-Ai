@@ -8,7 +8,7 @@ MediTrain is an AI-powered medical assistant designed to provide users with accu
 
 * **Conversational Context** : Retains the context of recent interactions to provide relevant and cohesive responses.
 * **Medical Focus** : Tailored to assist with general medical questions while avoiding direct diagnoses.
-* **Streamlit UI** : Intuitive and interactive web-based interface for seamless user interaction.
+* **Flask** : Intuitive and interactive web-based interface for seamless user interaction.
 * **Empathetic Responses** : Ensures responses are clear, considerate, and accurate.
 
 ## Prerequisites
@@ -44,20 +44,20 @@ To run MediTrain locally, ensure you have the following:
 
 1. Run the application:
    ```bash
-   streamlit run app.py
+   python app.py
    ```
 2. Open the application in your browser (default: [http://localhost:8501](http://localhost:8501/)).
 3. Interact with MediTrain by typing your medical queries in the input box.
 
 ## Project Structure
 
-* **`app.py`** : Main Streamlit application script.
+* **`app.py`** : Main flask application script.
 * **`requirements.txt`** : List of required Python packages.
 * **`.env`** : Environment file containing sensitive API keys (not included in the repository).
 
 ## Key Libraries
 
-* **Streamlit** : For building the user interface.
+* **Flask** : For building the user interface.
 * **Groq** : AI model powering the chatbot.
 * **Python-dotenv** : For managing environment variables.
 
