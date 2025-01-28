@@ -34,10 +34,6 @@ To run MediTrain locally, ensure you have the following:
    ```bash
    pip install -r requirements.txt
    ```
-4. Set up your environment variables by creating a `.env` file in the root directory:
-   ```env
-   GROQ_API_KEY=your_groq_api_key_here
-   ```
 
 ## Usage
 
