@@ -22,7 +22,7 @@ To run MediTrain locally, ensure you have the following:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/sayan18012004/MediTrain-Chatbot.git
+   git clone https://github.com/Sheeraz88/Meditrain-Ai.git
    cd MediTrain-Chatbot
    ```
 2. Create a virtual environment and activate it:
